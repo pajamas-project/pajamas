@@ -1,0 +1,31 @@
+{
+  "name": "@pajamas/types",
+  "description": "Common TypeScript types used within Pajamas",
+  "author": "Mikhail Danshin <effectdopler0@gmail.com>",
+  "version": "0.0.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pajamas-project/pajamas",
+    "directory": "packages/types"
+  },
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "files": ["dist"],
+  "keywords": [
+    "pajamas",
+    "types"
+  ],
+  "packageManager": "yarn@3.2.0",
+  "scripts": {
+    "build": "yarn clean && tsc -b",
+    "clean": "shx rm -rf dist"
+  },
+  "devDependencies": {
+    "shx": "^0.3.4",
+    "typescript": "^4.6.3"
+  }
+}
