@@ -7,7 +7,8 @@
   "packageManager": "yarn@3.2.0",
   "workspaces": {
     "packages": [
-      "packages/*"
+      "packages/*",
+      "storybook"
     ]
   },
   "devDependencies": {
@@ -27,7 +28,8 @@
   },
   "scripts": {
     "postinstall": "husky install",
-    "test": "echo 0"
+    "test": "echo 0",
+    "storybook": "yarn --cwd storybook start"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,cjs}": [
