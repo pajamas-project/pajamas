@@ -1,7 +1,7 @@
 import { styled } from '@mui/material/styles'
 import React, { FC, ReactNode } from 'react'
 
-import { Header } from '../Header'
+// Import { Header } from '../Header'
 
 const Main = styled('main')(() => ({
   backgroundColor: 'rgb(227, 242, 253)',
@@ -15,7 +15,7 @@ const Main = styled('main')(() => ({
 
 export const MainLayout: FC<{ children: ReactNode }> = ({ children }) => (
   <>
-    <Header />
+    {/* <Header /> */}
     <Main>{children}</Main>
   </>
 )
