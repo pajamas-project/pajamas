@@ -2,7 +2,7 @@ import { Card as MUICard, CardContent, CardHeader, Divider } from '@mui/material
 import React, { forwardRef } from 'react'
 
 export interface CardProps {
-  title?: string
+  title?: React.ReactNode
   children?: React.ReactNode
 }
 
