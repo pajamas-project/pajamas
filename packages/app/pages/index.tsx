@@ -1,9 +1,9 @@
-import { MainLayout } from '@pajamas/core-components'
+import { Card, MainLayout } from '@pajamas/core-components'
 import { NextPage } from 'next'
 
 const Home: NextPage = () => (
   <MainLayout>
-    <div>MAIN</div>
+    <Card>MAIN</Card>
   </MainLayout>
 )
 

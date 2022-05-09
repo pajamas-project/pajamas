@@ -26,6 +26,10 @@
     "shx": "^0.3.4",
     "typescript": "^4.6.3"
   },
+  "resolutions": {
+    "react": "18.1.0",
+    "react-dom": "18.1.0"
+  },
   "scripts": {
     "postinstall": "husky install",
     "test": "echo 0",
