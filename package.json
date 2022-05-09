@@ -29,7 +29,7 @@
   "scripts": {
     "postinstall": "husky install",
     "test": "echo 0",
-    "storybook": "yarn --cwd storybook start"
+    "storybook": "yarn workspace storybook start"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,mjs,cjs}": [
