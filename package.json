@@ -33,6 +33,8 @@
   "scripts": {
     "postinstall": "husky install",
     "test": "echo 0",
+    "dev": "yarn workspaces foreach --no-private run dev",
+    "build": "yarn workspaces foreach --no-private run build",
     "storybook": "yarn workspace storybook start"
   },
   "lint-staged": {
