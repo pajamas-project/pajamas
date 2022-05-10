@@ -1,4 +1,4 @@
-import { Box, Grid, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import { styled } from '@mui/material/styles'
 import { Card } from '@pajamas/core-components'
 import { FC } from 'react'
