@@ -4,6 +4,7 @@ import React, { FC, ReactNode } from 'react'
 // Import { Header } from '../Header'
 
 const Main = styled('main')(() => ({
+  display: 'flex',
   backgroundColor: 'rgb(227, 242, 253)',
   minHeight: 'calc(100vh - 88px)',
   flexGrow: 1,
