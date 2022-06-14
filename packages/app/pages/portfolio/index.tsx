@@ -2,7 +2,6 @@ import { gql, useQuery } from '@apollo/client'
 import { CircularProgress, Grid } from '@mui/material'
 import { useUserId } from '@nhost/nextjs'
 import { MainLayout } from '@pajamas/core-components'
-import { withAuth } from 'hoc/withAuth'
 import { NextPage } from 'next'
 import React from 'react'
 import { PortfolioTable } from '../../components/portfolio/PortfolioTable'
@@ -21,7 +20,10 @@ const GET_USER_ACCOUNTS = gql`
 
 const Portfolio: NextPage = () => {
   const id = useUserId()
-  const { data, loading } = useQuery(GET_USER_ACCOUNTS, { variables: { userId: id } })
+  const { data, loading } = useQuery(GET_USER_ACCOUNTS, {
+    variables: { userId: id },
+    skip: !id,
+  })
 
   return (
     <MainLayout>
@@ -34,4 +36,4 @@ const Portfolio: NextPage = () => {
   )
 }
 
-export default withAuth(Portfolio)
+export default Portfolio

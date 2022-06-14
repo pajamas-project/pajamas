@@ -4,7 +4,6 @@ import { NextPage } from 'next'
 import Link from 'next/link'
 import React from 'react'
 import { DailyBudgetCard, ExpenseCard, ExpenseTable, IncomeCard, OperationPieChar } from '../components'
-import { withAuth } from '../hoc/withAuth'
 
 const Home: NextPage = () => (
   <MainLayout>
@@ -38,4 +37,4 @@ const Home: NextPage = () => (
   </MainLayout>
 )
 
-export default withAuth(Home)
+export default Home
