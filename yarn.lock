@@ -2958,6 +2958,7 @@ __metadata:
     next: 12.1.5
     react: 18.1.0
     react-dom: 18.1.0
+    react-social-login-buttons: ^3.6.0
     recharts: ^2.1.9
     typescript: 4.6.3
   languageName: unknown
@@ -13877,6 +13878,15 @@ __metadata:
     react: ^15.0.0 || ^16.0.0 || ^17.0.0
     react-dom: ^15.0.0 || ^16.0.0 || ^17.0.0
   checksum: 4eff3fb93067b538e046df2c56a2f99b25f4c3a2aafc1c59707d1a0150f7f0afab408afdc1a47ffa3556adbdb5c915d6035a9a28da878e68771dce7568cc6f69
+  languageName: node
+  linkType: hard
+
+"react-social-login-buttons@npm:^3.6.0":
+  version: 3.6.0
+  resolution: "react-social-login-buttons@npm:3.6.0"
+  peerDependencies:
+    react: ^15.0.0 || ^16.0.0 || ^17.x
+  checksum: 72655c2a23b5205f11d826cf02565a4552b99726b23a03dc9dbc750b82805ff571fdd56b2aeeac52ab70cb63552c8d46d084cb192a8909bdd1f614847f4f5dcd
   languageName: node
   linkType: hard
 
