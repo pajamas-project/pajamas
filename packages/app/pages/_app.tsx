@@ -1,13 +1,10 @@
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import createCache from '@emotion/cache'
-import { NhostClient, NhostNextProvider } from '@nhost/nextjs'
+import { NhostNextProvider } from '@nhost/nextjs'
 import { NhostApolloProvider } from '@nhost/react-apollo'
 import type { AppProps } from 'next/app'
 import { FC } from 'react'
-
-const nhost = new NhostClient({
-  backendUrl: 'https://bxcmyzroksvtjxbjhkms.nhost.run',
-})
+import { nhost } from '../libs'
 
 function createEmotionCache() {
   return createCache({ key: 'css' })
@@ -23,7 +20,7 @@ interface MyAppProps extends AppProps {
 const MyApp: FC<MyAppProps> = ({ Component, pageProps, emotionCache = clientSideEmotionCache }) => (
   <CacheProvider value={emotionCache}>
     {/* @ts-ignore */}
-    <NhostNextProvider nhost={nhost}>
+    <NhostNextProvider nhost={nhost} initial={pageProps.nhostSession}>
       {/* @ts-ignore */}
       <NhostApolloProvider nhost={nhost}>
         <Component {...pageProps} />
