@@ -5,6 +5,7 @@ import { MainLayout } from '@pajamas/core-components'
 import { NextPage } from 'next'
 import React from 'react'
 import { PortfolioTable } from '../../components/portfolio/PortfolioTable'
+import { withAuth } from '../../hoc/withAuth'
 
 const GET_USER_ACCOUNTS = gql`
   query GetUserAccounts($userId: uuid!) {
@@ -36,4 +37,4 @@ const Portfolio: NextPage = () => {
   )
 }
 
-export default Portfolio
+export default withAuth(Portfolio)

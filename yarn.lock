@@ -2784,6 +2784,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@nhost/core@npm:0.6.5":
+  version: 0.6.5
+  resolution: "@nhost/core@npm:0.6.5"
+  dependencies:
+    axios: ^0.27.2
+    js-cookie: ^3.0.1
+    xstate: ^4.31.0
+  checksum: 89c4714dda91ffbe4a2103483197ae18d90b122606666b271c57ffffefea776420a70456e4629844d62619055b582c4d797740dd7242156814ac97366a3a16a8
+  languageName: node
+  linkType: hard
+
 "@nhost/core@npm:0.7.0":
   version: 0.7.0
   resolution: "@nhost/core@npm:0.7.0"
@@ -2795,14 +2806,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nhost/core@npm:^0.5.2":
-  version: 0.5.2
-  resolution: "@nhost/core@npm:0.5.2"
+"@nhost/hasura-auth-js@npm:1.1.14":
+  version: 1.1.14
+  resolution: "@nhost/hasura-auth-js@npm:1.1.14"
   dependencies:
-    axios: ^0.25.0
-    js-cookie: ^3.0.1
+    "@nhost/core": 0.6.5
+    jwt-decode: ^3.1.2
     xstate: ^4.31.0
-  checksum: 3fde6de64a68eae492d967672ef711ac1b8f97fd8bfcec9becfbde895a2ed60b2bc8b9059edcd1f4ed3c472a2aa50f12eac431a9480b8d4f71509c3cc795791f
+  checksum: 86f5ef7576f1bc0f24e7367a2febd3f5846315cda4474a26f7c210486d839d4e72d97b43d5ce5d1995463d37ad152aef8d9f574e2cc83697b01609a3c9fc73ef
   languageName: node
   linkType: hard
 
@@ -2817,31 +2828,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nhost/hasura-auth-js@npm:^1.1.4":
-  version: 1.1.4
-  resolution: "@nhost/hasura-auth-js@npm:1.1.4"
-  dependencies:
-    "@nhost/core": ^0.5.2
-    jwt-decode: ^3.1.2
-  checksum: dcd92e3fb3cc62754d38dee0247db8ba5faf46526c3b2f8d66593c55de1696902651cddc82e9060e13d1b1ebba3fbbb4d24e4d994fa27407d5202e959380f724
-  languageName: node
-  linkType: hard
-
 "@nhost/hasura-storage-js@npm:0.3.3":
   version: 0.3.3
   resolution: "@nhost/hasura-storage-js@npm:0.3.3"
   dependencies:
     axios: ^0.27.2
   checksum: 9b681c1cc125a857f0b36f05da4fff5d155c1a2be1c1a68ef06a72ed87fb219f770adae7f4061b4a62a0bafc6d808f8d1709ece0376ef8ffe4fa32f3a4c8e15c
-  languageName: node
-  linkType: hard
-
-"@nhost/hasura-storage-js@npm:^0.2.0":
-  version: 0.2.0
-  resolution: "@nhost/hasura-storage-js@npm:0.2.0"
-  dependencies:
-    axios: ^0.21.1
-  checksum: a674e0066ea4de2e38ef5b1dc0406790496764465632486fb28c36ab0c1ead59c8c51f35b6e775cb3bf51023f315dbd8a57a9f2e3505df5c7562806055e6f715
   languageName: node
   linkType: hard
 
@@ -2863,7 +2855,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nhost/nhost-js@npm:1.3.0, @nhost/nhost-js@npm:^1.3.0":
+"@nhost/nhost-js@npm:1.2.4":
+  version: 1.2.4
+  resolution: "@nhost/nhost-js@npm:1.2.4"
+  dependencies:
+    "@nhost/hasura-auth-js": 1.1.14
+    "@nhost/hasura-storage-js": 0.3.3
+    axios: ^0.27.2
+    jwt-decode: ^3.1.2
+    query-string: ^7.0.1
+  peerDependencies:
+    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
+  checksum: b0b9eaaa02da76b622079f35fdb7861418d7f24877cfca4eb333dc744226d7eef80e641f49cbe926d6ee2820c13a248c077ea2d7f7a8cdf3db4b67ef05beae8b
+  languageName: node
+  linkType: hard
+
+"@nhost/nhost-js@npm:1.3.0":
   version: 1.3.0
   resolution: "@nhost/nhost-js@npm:1.3.0"
   dependencies:
@@ -2875,21 +2882,6 @@ __metadata:
   peerDependencies:
     graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
   checksum: eb6e49159c8566538d167e9e4bc1b56d892713f176cb3e6ab54e85e58ba21bb7a96ab00d2659a8bd1c337bc1d4246ed46d1314a0856fcdc02d700a5b01286009
-  languageName: node
-  linkType: hard
-
-"@nhost/nhost-js@npm:^1.1.4":
-  version: 1.1.9
-  resolution: "@nhost/nhost-js@npm:1.1.9"
-  dependencies:
-    "@nhost/hasura-auth-js": ^1.1.4
-    "@nhost/hasura-storage-js": ^0.2.0
-    axios: ^0.23.0
-    jwt-decode: ^3.1.2
-    query-string: ^7.0.1
-  peerDependencies:
-    graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
-  checksum: 2b67fdf5bd995207a198179572438373efc20fb63011ec89b148e9f0d46dd3a737aa2b0d4a281dfbe0f9821a0430297054e81cc12a183819eb1f492a5f9d6001
   languageName: node
   linkType: hard
 
@@ -2908,30 +2900,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@nhost/react-auth@npm:^3.1.0":
-  version: 3.1.0
-  resolution: "@nhost/react-auth@npm:3.1.0"
+"@nhost/react@npm:^0.7.2":
+  version: 0.7.13
+  resolution: "@nhost/react@npm:0.7.13"
   dependencies:
-    "@nhost/hasura-auth-js": 1.2.0
+    "@nhost/core": 0.6.5
+    "@nhost/nhost-js": 1.2.4
+    "@xstate/react": ^3.0.0
+    immer: ^9.0.14
+    jwt-decode: ^3.1.2
+    xstate: ^4.31.0
   peerDependencies:
-    "@nhost/react": 0.8.0
-    react: ^16.0.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-  checksum: a0e46eca1fcce8f1bb0043c990ebfccd603779bde1668ca8921ee7b66a0437f2fb5430d2df79d7cfab6dd1f79a9e6767fed4005183320adbea3148feaec0c78b
-  languageName: node
-  linkType: hard
-
-"@nhost/react@npm:^0.5.7":
-  version: 0.5.7
-  resolution: "@nhost/react@npm:0.5.7"
-  dependencies:
-    "@nhost/nhost-js": ^1.1.4
-    "@xstate/react": ^2.0.1
-    immer: ^9.0.12
-  peerDependencies:
-    react: ^17.0.0 || ^18.0.0
-    react-dom: ^17.0.0 || ^18.0.0
-  checksum: 62c25b89c869869d425ccca7cbd0b634f7a8ae8251876fc6638220ed5808676524fb6ff2e6becfce2af96f1b538bf1047dcd5ad9b767444696bbf4142240728f
+    react: ^17.0.0 || ^18.1.0
+    react-dom: ^17.0.0 || ^18.1.0
+  checksum: 294648f32297dfa4c46bcce56a899ffa0ed989d2be5ae89466587a6feea23349e90198f337992f4b924360557aa652188c1d8a2c57769acf3eb040d5f44c1c40
   languageName: node
   linkType: hard
 
@@ -3045,10 +3027,8 @@ __metadata:
     "@mui/material": ^5.8.4
     "@mui/styles": ^5.8.4
     "@nhost/nextjs": ^1.3.0
-    "@nhost/nhost-js": ^1.3.0
-    "@nhost/react": ^0.5.7
+    "@nhost/react": ^0.7.2
     "@nhost/react-apollo": ^4.3.0
-    "@nhost/react-auth": ^3.1.0
     "@pajamas/core-components": "workspace:^"
     "@types/node": 17.0.29
     "@types/react": 18.0.8
@@ -5213,22 +5193,22 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@xstate/react@npm:^2.0.1":
-  version: 2.0.1
-  resolution: "@xstate/react@npm:2.0.1"
+"@xstate/react@npm:^3.0.0":
+  version: 3.0.0
+  resolution: "@xstate/react@npm:3.0.0"
   dependencies:
     use-isomorphic-layout-effect: ^1.0.0
-    use-subscription: ^1.3.0
+    use-sync-external-store: ^1.0.0
   peerDependencies:
-    "@xstate/fsm": ^1.6.5
-    react: ^16.8.0 || ^17.0.0
-    xstate: ^4.30.3
+    "@xstate/fsm": ^2.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    xstate: ^4.31.0
   peerDependenciesMeta:
     "@xstate/fsm":
       optional: true
     xstate:
       optional: true
-  checksum: 5409c2059534b73fdaafaa34f28c23916498caf68e8ae7be01e6f18e6112c8c580297770ecfb40a8fc32fd94d2fbf3c5abff4c239e9cea96f4ed25047e96510c
+  checksum: 3ead5ce2bfda1ac3e6ebd1f1a842d3fcdf7236b11edb548d32e58979de7640a860747434704bace9911e01c9a5c9daa6e31b13a774b35f6b931ca338d722d7c5
   languageName: node
   linkType: hard
 
@@ -5841,33 +5821,6 @@ __metadata:
   version: 4.4.1
   resolution: "axe-core@npm:4.4.1"
   checksum: ad14c5b71059dc3d24ef2519b8cd96e98b4a572379396201ce449d1c4262181821d6ca9550df65b22371faf06d28bbe94d391fe5675f2a08e6550f7b5da8416d
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.21.1":
-  version: 0.21.4
-  resolution: "axios@npm:0.21.4"
-  dependencies:
-    follow-redirects: ^1.14.0
-  checksum: 44245f24ac971e7458f3120c92f9d66d1fc695e8b97019139de5b0cc65d9b8104647db01e5f46917728edfc0cfd88eb30fc4c55e6053eef4ace76768ce95ff3c
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.23.0":
-  version: 0.23.0
-  resolution: "axios@npm:0.23.0"
-  dependencies:
-    follow-redirects: ^1.14.4
-  checksum: 879f61022bd825da2a7ebb72410bc528683ba54c140436baa0b924b7cab02ec0919fe64a04a546f482a75f5fd570b77884f9826764a95f2fd88265e61dcb70db
-  languageName: node
-  linkType: hard
-
-"axios@npm:^0.25.0":
-  version: 0.25.0
-  resolution: "axios@npm:0.25.0"
-  dependencies:
-    follow-redirects: ^1.14.7
-  checksum: 2a8a3787c05f2a0c9c3878f49782357e2a9f38945b93018fb0c4fd788171c43dceefbb577988628e09fea53952744d1ecebde234b561f1e703aa43e0a598a3ad
   languageName: node
   linkType: hard
 
@@ -9107,16 +9060,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"follow-redirects@npm:^1.14.0, follow-redirects@npm:^1.14.4, follow-redirects@npm:^1.14.7":
-  version: 1.15.0
-  resolution: "follow-redirects@npm:1.15.0"
-  peerDependenciesMeta:
-    debug:
-      optional: true
-  checksum: eaec81c3e0ae57aae2422e38ad3539d0e7279b3a63f9681eeea319bb683dea67502c4e097136b8ce9721542b4e236e092b6b49e34e326cdd7733c274f0a3f378
-  languageName: node
-  linkType: hard
-
 "follow-redirects@npm:^1.14.9":
   version: 1.15.1
   resolution: "follow-redirects@npm:1.15.1"
@@ -10264,10 +10207,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"immer@npm:^9.0.12":
-  version: 9.0.12
-  resolution: "immer@npm:9.0.12"
-  checksum: bcbec6d76dac65e49068eb67ece4d407116e62b8cde3126aa89c801e408f5047763ba0aeb62f1938c1aa704bb6612f1d8302bb2a86fa1fc60fcc12d8b25dc895
+"immer@npm:^9.0.14":
+  version: 9.0.15
+  resolution: "immer@npm:9.0.15"
+  checksum: 92e3d63e810e3c3c2bb61b70c45443e37ef983ad12924e3edaf03725ae5979618f5b473439bb3bb4a8c4769f25132f18dec10ea15c40f0b20da5691ff96ff611
   languageName: node
   linkType: hard
 
@@ -16607,23 +16550,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"use-subscription@npm:^1.3.0":
-  version: 1.7.0
-  resolution: "use-subscription@npm:1.7.0"
-  dependencies:
-    use-sync-external-store: ^1.1.0
+"use-sync-external-store@npm:^1.0.0":
+  version: 1.2.0
+  resolution: "use-sync-external-store@npm:1.2.0"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: a70c1668cf91c700614381e689b38b974234798cae1f3c2ec185cd5ab56d525f0fd37bd0d048d7b3bf003bfed3f5652f7801214cabe10a4114efe2671acedc59
-  languageName: node
-  linkType: hard
-
-"use-sync-external-store@npm:^1.1.0":
-  version: 1.1.0
-  resolution: "use-sync-external-store@npm:1.1.0"
-  peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 8993a0b642f91d7fcdbb02b7b3ac984bd3af4769686f38291fe7fcfe73dfb73d6c64d20dfb7e5e7fbf5a6da8f5392d6f8e5b00c243a04975595946e82c02b883
+  checksum: 5c639e0f8da3521d605f59ce5be9e094ca772bd44a4ce7322b055a6f58eeed8dda3c94cabd90c7a41fb6fa852210092008afe48f7038792fd47501f33299116a
   languageName: node
   linkType: hard
 

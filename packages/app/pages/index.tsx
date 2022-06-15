@@ -1,9 +1,20 @@
 import { Button, Grid } from '@mui/material'
+import { getNhostSession } from '@nhost/nextjs'
 import { MainLayout } from '@pajamas/core-components'
-import { NextPage } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import Link from 'next/link'
 import React from 'react'
 import { DailyBudgetCard, ExpenseCard, ExpenseTable, IncomeCard, OperationPieChar } from '../components'
+import { withAuth } from '../hoc/withAuth'
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const nhostSession = await getNhostSession('https://bxcmyzroksvtjxbjhkms.nhost.run', context)
+  return {
+    props: {
+      nhostSession,
+    },
+  }
+}
 
 const Home: NextPage = () => (
   <MainLayout>
@@ -37,4 +48,4 @@ const Home: NextPage = () => (
   </MainLayout>
 )
 
-export default Home
+export default withAuth(Home)
