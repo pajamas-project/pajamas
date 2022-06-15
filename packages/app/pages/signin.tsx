@@ -11,7 +11,7 @@ const SignIn: NextPage = () => {
   return (
     <MainLayout>
       <Grid container alignItems={'center'} justifyContent={'center'}>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Card sx={{ padding: 2 }}>
             <GithubLoginButton
               onClick={() => router.push('https://bxcmyzroksvtjxbjhkms.nhost.run/v1/auth/signin/provider/github')}
