@@ -8,9 +8,6 @@ export const withAuth = (Component: React.FC) =>
   function AuthProtected<P>(props: P) {
     const router = useRouter()
     const { isLoading, isAuthenticated } = useAuthenticationStatus()
-    console.log(props)
-    console.log({ isLoading })
-    console.log({ isAuthenticated })
 
     if (isLoading) {
       return (
