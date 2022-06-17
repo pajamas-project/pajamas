@@ -2,6 +2,7 @@ import { CacheProvider, EmotionCache } from '@emotion/react'
 import createCache from '@emotion/cache'
 import { NhostNextProvider, NhostSession } from '@nhost/nextjs'
 import { NhostApolloProvider } from '@nhost/react-apollo'
+import { appWithTranslation } from 'next-i18next'
 import type { AppProps } from 'next/app'
 import { FC } from 'react'
 import { nhost } from '../libs'
@@ -32,4 +33,4 @@ const MyApp: FC<MyAppProps> = ({ Component, pageProps, emotionCache = clientSide
   </CacheProvider>
 )
 
-export default MyApp
+export default appWithTranslation(MyApp)

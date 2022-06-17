@@ -3,6 +3,7 @@ import { CircularProgress, Grid } from '@mui/material'
 import { useUserId } from '@nhost/nextjs'
 import { MainLayout } from '@pajamas/core-components'
 import { NextPage } from 'next'
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import React from 'react'
 import { PortfolioTable } from '../../components/portfolio/PortfolioTable'
 import { withAuth } from '../../hoc/withAuth'
@@ -37,4 +38,10 @@ const Portfolio: NextPage = () => {
   )
 }
 
-export default withAuth(Portfolio)
+export const getStaticProps = async ({ locale }: { locale: string }) => ({
+  props: {
+    ...(await serverSideTranslations(locale, ['portfolio'])),
+  },
+})
+
+export default Portfolio
