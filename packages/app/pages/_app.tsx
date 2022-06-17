@@ -5,6 +5,8 @@ import { NhostApolloProvider } from '@nhost/react-apollo'
 import type { AppProps } from 'next/app'
 import { FC } from 'react'
 import { nhost } from '../libs'
+import { ThemeProvider } from '@mui/material/styles'
+import theme from '@pajamas/theme'
 
 function createEmotionCache() {
   return createCache({ key: 'css' })
@@ -22,7 +24,9 @@ const MyApp: FC<MyAppProps> = ({ Component, pageProps, emotionCache = clientSide
     {/* @ts-ignore */}
     <NhostNextProvider nhost={nhost} initial={pageProps.nhostSession as NhostSession}>
       <NhostApolloProvider nhost={nhost}>
-        <Component {...pageProps} />
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
       </NhostApolloProvider>
     </NhostNextProvider>
   </CacheProvider>

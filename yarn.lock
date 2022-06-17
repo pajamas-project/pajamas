@@ -3026,10 +3026,12 @@ __metadata:
     "@mui/lab": ^5.0.0-alpha.86
     "@mui/material": ^5.8.4
     "@mui/styles": ^5.8.4
+    "@mui/utils": ^5.8.4
     "@nhost/nextjs": ^1.3.0
     "@nhost/react": ^0.7.2
     "@nhost/react-apollo": ^4.3.0
     "@pajamas/core-components": "workspace:^"
+    "@pajamas/theme": "workspace:^"
     "@types/node": 17.0.29
     "@types/react": 18.0.8
     "@types/react-dom": 18.0.0
@@ -3043,6 +3045,24 @@ __metadata:
     react-social-login-buttons: ^3.6.0
     recharts: ^2.1.9
     typescript: 4.6.3
+  languageName: unknown
+  linkType: soft
+
+"@pajamas/theme@workspace:^, @pajamas/theme@workspace:packages/theme":
+  version: 0.0.0-use.local
+  resolution: "@pajamas/theme@workspace:packages/theme"
+  dependencies:
+    "@emotion/react": ^11.9.3
+    "@emotion/styled": ^11.9.3
+    "@mui/icons-material": ^5.8.4
+    "@mui/lab": ^5.0.0-alpha.86
+    "@mui/material": ^5.8.4
+    "@mui/styles": ^5.8.4
+    typescript: ^4.6.3
+  peerDependencies:
+    "@types/react": ^18.0.0
+    react: ^18.0.0
+    react-dom: ^18.0.0
   languageName: unknown
   linkType: soft
 
