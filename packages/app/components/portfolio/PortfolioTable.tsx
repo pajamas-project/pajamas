@@ -20,7 +20,13 @@ interface PortfolioTableProps {
     id: string
     title: string
     income: number
-    cost: number
+    cost_aggregate: {
+      aggregate: {
+        sum: {
+          value: number
+        }
+      }
+    }
     share: number
   }>
 }
@@ -67,7 +73,9 @@ export const PortfolioTable = ({ accounts }: PortfolioTableProps) => {
                 <Grid container spacing={1} direction={'column'}>
                   <Grid item>
                     <Typography variant={'subtitle2'}>
-                      {new Intl.NumberFormat(language, { style: 'currency', currency: 'RUB' }).format(account.cost)}
+                      {new Intl.NumberFormat(language, { style: 'currency', currency: 'RUB' }).format(
+                        account.cost_aggregate.aggregate.sum.value
+                      )}
                     </Typography>
                   </Grid>
                   <Grid item>

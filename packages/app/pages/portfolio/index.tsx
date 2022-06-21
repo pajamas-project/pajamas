@@ -11,27 +11,33 @@ import { withAuth } from '../../hoc/withAuth'
 const GET_USER_ACCOUNTS = gql`
   query GetUserAccounts($userId: uuid!) {
     accounts(where: { userId: { _eq: $userId } }) {
-      cost
       id
+      title
       income
       share
-      title
+      cost_aggregate {
+        aggregate {
+          sum {
+            value
+          }
+        }
+      }
     }
   }
 `
 
 const Portfolio: NextPage = () => {
-  const id = useUserId()
-  const { data, loading } = useQuery(GET_USER_ACCOUNTS, {
-    variables: { userId: id },
-    skip: !id,
+  const userId = useUserId()
+  const { data: accountData, loading: accountLoading } = useQuery(GET_USER_ACCOUNTS, {
+    variables: { userId },
+    skip: !userId,
   })
 
   return (
     <MainLayout>
       <Grid container spacing={3}>
         <Grid item xs={12} xl={6}>
-          {loading ? <CircularProgress /> : <PortfolioTable accounts={data?.accounts || []} />}
+          {accountLoading ? <CircularProgress /> : <PortfolioTable accounts={accountData?.accounts || []} />}
         </Grid>
       </Grid>
     </MainLayout>
@@ -44,4 +50,4 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 })
 
-export default Portfolio
+export default withAuth(Portfolio)
